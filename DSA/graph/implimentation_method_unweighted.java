@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class implimentation_method {
+public class implimentation_method_unweighted {
    static class edge{
     int src;
     int des;
@@ -25,7 +25,12 @@ public class implimentation_method {
     public static void main(String[] args) {
         int v=10;
         ArrayList<edge> graph[] = new ArrayList[v];
-        System.out.println(graph);
+        create_graph(graph);
+       //print 2's neighbour
+       for(int i=0 ; i<graph[1].size() ;i++){
+        edge e=graph[1].get(i);
+        System.out.print(e.des+" ");
+       }
 
     }
 } 
