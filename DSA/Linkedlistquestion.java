@@ -111,58 +111,60 @@ public class Linkedlistquestion{
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-//  Given the head of a singly linked list, return true if it is a 
-// palindrome
-//  or false otherwise.
-// class Solution {
-//     public ListNode reverse(ListNode head){
-//         ListNode pre = null;
-//         ListNode curr = head;
 
-//         while(curr != null){
-//             ListNode next = curr.next;
-//             curr.next= pre;
-//             pre= curr;
-//             curr= next;
-//         }
+/*
+ Given the head of a singly linked list, return true if it is a 
+palindrome
+ or false otherwise.
+class Solution {
+    public ListNode reverse(ListNode head){
+        ListNode pre = null;
+        ListNode curr = head;
+
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next= pre;
+            pre= curr;
+            curr= next;
+        }
         
-//         return pre;
-//     }
+        return pre;
+    }
 
-//     public ListNode  findmiddle(ListNode head){
-//         ListNode hare = head;
-//         ListNode turtel = head;
+    public ListNode  findmiddle(ListNode head){
+        ListNode hare = head;
+        ListNode turtel = head;
 
-//         while(hare.next != null && hare.next.next != null){
-//         hare= hare.next.next;
-//         turtel = turtel.next;
-//         }
-//         return turtel;
-//     }
-//     public boolean isPalindrome(ListNode head) {
-//        if(head==null || head.next == null){
-//         return true;
-//        } 
+        while(hare.next != null && hare.next.next != null){
+        hare= hare.next.next;
+        turtel = turtel.next;
+        }
+        return turtel;
+    }
+    public boolean isPalindrome(ListNode head) {
+       if(head==null || head.next == null){
+        return true;
+       } 
 
-//      ListNode middle =  findmiddle(head);//first half end 
+     ListNode middle =  findmiddle(head);//first half end 
 
-//     ListNode secondhalfstart= reverse(middle.next);
+    ListNode secondhalfstart= reverse(middle.next);
      
-//      ListNode firsthalfstart = head;
-//      while(secondhalfstart !=null){
-//         if(firsthalfstart.val != secondhalfstart.val){
-//             return false;
-//         }
-//         firsthalfstart=  firsthalfstart.next;
-//         secondhalfstart = secondhalfstart.next;;
+     ListNode firsthalfstart = head;
+     while(secondhalfstart !=null){
+        if(firsthalfstart.val != secondhalfstart.val){
+            return false;
+        }
+        firsthalfstart=  firsthalfstart.next;
+        secondhalfstart = secondhalfstart.next;;
 
-//      }
-//      return true;
+     }
+     return true;
 
-//     }
-// }
+    }
+}
 
-
+*/
 
 
 // Cycle of a linked list
@@ -177,20 +179,26 @@ public class Linkedlistquestion{
  *     }
  * }
  */
-// public class Solution {
-//     public boolean hasCycle(ListNode head) {
-//         if(head==null){
-//             return false;
-//         }
-//        ListNode hare = head;//fast
-//        ListNode turtel = head;//slow
-//        while(hare != null && hare.next != null){
-//         hare= hare.next.next;
-//         turtel= turtel.next;
-//         if(hare == turtel){
-//             return true;
-//         }
-//        }
-//      return false;
-//     }
-// }
+
+
+
+/*
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head==null){
+            return false;
+        }
+       ListNode hare = head;//fast
+       ListNode turtel = head;//slow
+       while(hare != null && hare.next != null){
+        hare= hare.next.next;
+        turtel= turtel.next;
+        if(hare == turtel){
+            return true;
+        }
+       }
+     return false;
+    }
+}
+
+*/
