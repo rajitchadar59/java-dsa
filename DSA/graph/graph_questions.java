@@ -43,7 +43,7 @@ public class graph_questions {
     }
    }
 
-   //Q-print all paths 
+   //Q-print all paths ??
 
 public static void print_all_paths(ArrayList<edge> graph[] ,boolean visited[] ,int current,String path , int target){
     if(current==target){
@@ -62,11 +62,65 @@ public static void print_all_paths(ArrayList<edge> graph[] ,boolean visited[] ,i
 
 }
  
+
+//Q-Cycle detection in undirected graph
+public static boolean cycledetect_undirected(ArrayList<edge> graph[] , boolean visited[] , int current , int parent){
+    visited[current]=true;
+    for(int i =0 ; i <graph[current].size() ; i++){
+        edge e= graph[current].get(i);
+        if(visited[e.des]==true && e.des != parent){
+            return true;
+        }
+        if(visited[e.des]==false){
+            if(cycledetect_undirected(graph, visited, e.des, current)){
+                return true;
+            }
+
+        }
+        
+    }
+    return false;
+}
+//Q-Cycle detection in directed graph
+public static boolean cycledetect_directed(ArrayList<edge> graph[] , boolean visited[] , int current ,boolean rec[]){
+visited[current]=true;
+rec[current]=true;
+for(int i =0 ;i<graph[current].size() ;i++){
+    edge e=graph[current].get(i);
+    if(rec[e.des]==true){
+        return true;
+    }
+    if(visited[e.des]==false){
+        if(cycledetect_directed(graph, visited, e.des, rec)){
+            return true;
+        }
+        
+    }
+}
+rec[current]=false;
+return false;
+
+}
     public static void main(String[] args) {
         int v=7;
         ArrayList<edge> graph[] = new ArrayList[v];
         create_graph(graph);
-         int src =0 ,tar=5;
-        print_all_paths(graph,new boolean[v] ,src,"0" , tar);
+        //  int src =0 ,tar=5;
+        // print_all_paths(graph,new boolean[v] ,src,"0" , tar);
+         boolean visited[]=new boolean[v];
+         boolean rec[]=new boolean[v];
+         for(int i =0 ; i < v ; i++){
+         if(!visited[i]){
+
+       boolean iscycle = cycledetect_directed(graph, visited,i,rec);
+       if(iscycle){
+        System.out.println(iscycle);
+        break;
+
+       }
+       
+         }
+         }
+      
     }
 } 
