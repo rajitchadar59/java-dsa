@@ -24,7 +24,7 @@ public class undirected_weighted_imp {
    graph[3].add(new edge(3,2,-1));
    }
     public static void main(String[] args) {
-        int v=10;
+        int v=4;
         ArrayList<edge> graph[] = new ArrayList[v];
         create_graph(graph);
        //print 2's neighbour
