@@ -28,9 +28,12 @@ public class Bridge_graph_tarjan {
         graph[2].add(new edge(2, 1));
         graph[3].add(new edge(3, 0));
         graph[3].add(new edge(3, 4));
+        graph[3].add(new edge(3, 5));
         graph[4].add(new edge(4, 3));
-       
-      
+        graph[4].add(new edge(4, 5));
+        graph[5].add(new edge(5, 3));
+        graph[5].add(new edge(5, 4));
+
     }
 
     public static void dfs(ArrayList<edge> graph[], int curr, boolean visited[], int dt[], int low[], int time, int parent) {
