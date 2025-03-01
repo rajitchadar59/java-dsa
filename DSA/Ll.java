@@ -12,7 +12,8 @@ public class Ll{
             this.next = null;
         }
     }
-        Node head;
+ 
+   Node head;
     // add - first , last
     public void addfist(String data){
         Node newnode = new Node(data);
@@ -27,7 +28,7 @@ public class Ll{
         head = newnode;
         
     }
-
+    
     //add last
     public void addlast(String data){
         Node newnode = new Node(data);
@@ -36,6 +37,7 @@ public class Ll{
          return;
 
         }
+
         Node currNode = head;
         while(currNode.next != null){
             currNode= currNode.next;
@@ -43,7 +45,7 @@ public class Ll{
         currNode.next=newnode;
         size++;
     }
-
+    
     public void printlist(){
         if(head == null){
             System.out.println("list is empty");

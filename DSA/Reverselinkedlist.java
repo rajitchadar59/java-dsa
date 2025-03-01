@@ -1,8 +1,3 @@
-
-
-
-
-
 public class Reverselinkedlist{
     private int size;
     Reverselinkedlist(){
@@ -98,7 +93,9 @@ public class Reverselinkedlist{
    public void size(){
     System.out.println("size:"+size);
    }
-  public void reverseiter(){
+
+
+    public void reverseiter(){
     if(head == null || head.next == null){
         return ;
         
